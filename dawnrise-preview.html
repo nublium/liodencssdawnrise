@@ -129,6 +129,108 @@
             <div class="preview-main col-md-9">
 
                 <!-- ════════════════════════════════════════════════════════════
+                     MOCK "ABOUT" TABLE — exactly mirrors Lioden's real one.
+                     On the live site, the lion-image-block is auto-rendered
+                     from the customer's CURRENT pride male's layers.  Here
+                     we simulate it with the placeholder SVG so the corona /
+                     crown / circle effect can be previewed.
+                     ════════════════════════════════════════════════════════════ -->
+                <table class="table" id="about" style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td class="top center" colspan="2">
+                                <div class="xlarge b">
+                                    <a href="#" class="bigger" style="border: 0;">Kaskazi</a>, the Wanderer
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="right" style="text-align: center;">
+                            <td style="width: 200px; padding: 10px;">
+                                <a href="#">
+                                    <div id="lion_image">
+                                        <div class="lion-image-block" data-image-type="headshot">
+                                            <!-- In real Lioden, this is several stacked PNG layers.
+                                                 For the preview, we just show the avatar SVG. -->
+                                            <img src="placeholder-dawnrise-avatar.svg" alt="Live king">
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                            <td class="right">
+                                <table class="inner-table auto" style="width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td class="left" width="115"><b>Level:</b></td>
+                                            <td class="right" width="180">1</td>
+                                            <td width="3"></td>
+                                            <td class="left" width="115"><b>Branch:</b></td>
+                                            <td class="right" width="180"><a href="#">not a branch</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left"><b>Stats:</b></td>
+                                            <td class="right">30</td>
+                                            <td width="3"></td>
+                                            <td class="left"><b>Territory:</b></td>
+                                            <td class="right">40</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left"><b>Lionesses:</b></td>
+                                            <td class="right">0</td>
+                                            <td width="3"></td>
+                                            <td class="left"><b>Beetle Slots:</b></td>
+                                            <td class="right">0 / 6</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left"><b>Cubs:</b></td>
+                                            <td class="right">0 / 200</td>
+                                            <td width="3"></td>
+                                            <td class="left"><b>Cave Slots:</b></td>
+                                            <td class="right">0 / 3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bottom" colspan="2">
+                                There are <b>0 lions</b> with mutations in Kaskazi's pride.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- ════════════════════════════════════════════════════════════
+                     MOCK "PLAYER" TABLE — round avatar treatment
+                     ════════════════════════════════════════════════════════════ -->
+                <table class="table" id="player" style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td class="top" colspan="2">
+                                <small>Kaskazi's Player</small>
+                                <div class="floatright"><small>Member ID</small> #196265</div>
+                            </td>
+                        </tr>
+                        <tr class="right">
+                            <td class="right">
+                                <div class="center h3">
+                                    <div class="member-online"></div>thedawnrisepride
+                                </div>
+                                <p style="margin-top: 14px;">
+                                    <a href="#">Message</a> &nbsp;·&nbsp;
+                                    <a href="#">Send Gift</a> &nbsp;·&nbsp;
+                                    <a href="#">Create Trade</a>
+                                </p>
+                            </td>
+                            <td class="right" style="text-align: right; width: 150px;">
+                                <!-- The player's chosen avatar — CSS now clips this to a circle -->
+                                <img src="placeholder-dawnrise-avatar.svg" style="max-width: 150px; max-height: 150px;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <!-- ════════════════════════════════════════════════════════════
                      THE DAWNRISE PRIDE — TERRITORY SNIPPET (mirrors the .html file)
                      ════════════════════════════════════════════════════════════ -->
                 <div class="dr-territory">
@@ -145,18 +247,8 @@
                     <div class="dr-ornament-lg">— a kingdom of light —</div>
                     <div class="dr-divider"></div>
 
-                    <!-- Avatar -->
-                    <div class="dr-avatar-wrap">
-                        <span class="dr-avatar-corona"></span>
-                        <span class="dr-avatar-crown">♕</span>
-                        <a href="#">
-                            <span class="dr-avatar-frame">
-                                <img class="dr-avatar"
-                                     src="placeholder-dawnrise-avatar.svg"
-                                     alt="Kaskazi — pride male of the Dawnrise">
-                            </span>
-                        </a>
-                    </div>
+                    <!-- (Avatar block removed — the LIVE king is rendered in the
+                         About table at the top of the page, automatically.) -->
 
                     <!-- Tags -->
                     <div class="dr-tags-row">

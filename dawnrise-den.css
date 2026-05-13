@@ -1384,7 +1384,299 @@ html.nolayout, html.nolayout body, body.nolayout {
 
 
 /* ============================================================
-   [9] RESPONSIVE — collapses to one column on phones
+   [9.5] POST-LAUNCH FIXES
+   ────────────────────────────────────────────────────────────
+   Targeted overrides for issues raised by Kaskazi:
+     A. Live king image with sun corona (replaces placeholder)
+     B. Round player avatar in the Player table
+     C. Title centring — sun glyphs + text balanced
+     D. Info-row alignment — labels left, values right,
+        consistent across all rows, no dropcap-float bleed
+   ============================================================ */
+
+/* ─────────────────────────────────────────────────────────────
+   [A]  LIVE KING IMAGE  +  SUN CORONA
+   ─────────────────────────────────────────────────────────────
+   Lioden already renders the CURRENT pride male's stacked layers
+   in the element `#lion_image` (it lives inside the "About"
+   table at the top of every territory page).  Instead of using
+   a static placeholder SVG, we style that live element as the
+   page's hero — circular frame, rotating sun corona, crown above.
+   When you switch kings in-game, the image updates automatically.
+   ───────────────────────────────────────────────────────────── */
+
+/* Hide the description's placeholder avatar block — the live king
+   now serves as the avatar (rendered from the About table above). */
+.dr-territory .dr-avatar-wrap {
+    display: none !important;
+}
+
+/* The "About" table becomes the themed hero card */
+table#about {
+    background: rgba(20, 13, 9, 0.85) !important;
+    border: 1px solid rgba(232, 185, 74, 0.40) !important;
+    margin: 12px auto 18px !important;
+    box-shadow:
+        inset 0 0 35px rgba(0, 0, 0, 0.40),
+        0 4px 22px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* The "Kaskazi, the Wanderer" header row */
+table#about > tbody > tr > td.top.center,
+table#about > tbody > tr > td.top {
+    padding: 16px 20px !important;
+    border-bottom: 1px solid rgba(232, 185, 74, 0.45) !important;
+    background: linear-gradient(180deg, rgba(74, 50, 16, 0.70) 0%, rgba(26, 18, 8, 0.85) 100%) !important;
+}
+table#about .xlarge.b,
+table#about .xlarge,
+table#about a.bigger {
+    color: #f5d272 !important;
+    font-family: "Cinzel", "Marcellus", serif !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    text-shadow:
+        0 0 16px rgba(245, 210, 114, 0.55),
+        0 0 32px rgba(232, 149, 56, 0.30),
+        0 2px 4px rgba(0, 0, 0, 0.85) !important;
+}
+
+/* The cell that contains the lion image — give it room for the
+   corona AND the crown floating above, override Lioden's inline
+   `width: 200px; padding: 10px`. */
+table#about > tbody > tr.right > td:first-child {
+    position: relative !important;
+    width: 280px !important;
+    padding: 50px 20px 30px !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+/* The CROWN floating above the king (uses ::after on the cell) */
+table#about > tbody > tr.right > td:first-child::after {
+    content: "♕" !important;
+    position: absolute !important;
+    top: 10px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f5d272 !important;
+    font-size: 32px !important;
+    line-height: 1 !important;
+    text-shadow:
+        0 0 12px rgba(245, 210, 114, 0.75),
+        0 0 26px rgba(232, 149, 56, 0.55),
+        0 2px 4px rgba(0, 0, 0, 0.85) !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    animation: dr-sun-pulse 6s ease-in-out infinite !important;
+}
+
+/* The SUN CORONA — slowly rotating ring of rays around the king
+   (uses ::before on the cell, masked to a doughnut shape). */
+table#about > tbody > tr.right > td:first-child::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 50%; left: 50%;
+    width: 300px; height: 300px;
+    transform: translate(-50%, -50%);
+    pointer-events: none !important;
+    background: repeating-conic-gradient(from 0deg,
+        rgba(245, 210, 114, 0.20) 0deg 3deg,
+        transparent               3deg 30deg) !important;
+    border-radius: 50% !important;
+    -webkit-mask-image: radial-gradient(circle, transparent 38%, black 60%, transparent 88%) !important;
+    mask-image: radial-gradient(circle, transparent 38%, black 60%, transparent 88%) !important;
+    animation: dr-corona-spin 60s linear infinite !important;
+    z-index: 0 !important;
+}
+
+/* The lion image container — clip to a perfect circle */
+#lion_image {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    position: relative !important;
+    margin: 0 auto !important;
+    display: inline-block !important;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(245, 210, 114, 0.25) 0%, transparent 65%),
+        linear-gradient(135deg, rgba(192, 138, 42, 0.30) 0%, rgba(50, 32, 12, 0.65) 100%) !important;
+    border: 2px solid rgba(245, 210, 114, 0.70) !important;
+    box-shadow:
+        0 0 0 1px rgba(13, 9, 6, 0.95),
+        0 0 0 3px rgba(232, 185, 74, 0.45),
+        0 4px 24px rgba(0, 0, 0, 0.70),
+        inset 0 0 22px rgba(232, 149, 56, 0.22) !important;
+    transition: all 0.4s ease !important;
+    z-index: 1 !important;
+    cursor: pointer !important;
+}
+#lion_image:hover {
+    border-color: rgba(255, 230, 150, 0.95) !important;
+    transform: scale(1.02) !important;
+    box-shadow:
+        0 0 0 1px rgba(13, 9, 6, 0.95),
+        0 0 0 3px rgba(245, 210, 114, 0.75),
+        0 6px 32px rgba(232, 149, 56, 0.55),
+        inset 0 0 28px rgba(232, 149, 56, 0.32) !important;
+}
+
+/* Inner lion-image-block — fill the round container */
+#lion_image > div,
+#lion_image .lion-image-block {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: transparent !important;
+}
+
+/* The individual lion image layers — Lioden stacks them with
+   absolute positioning to form the composite, we just constrain
+   them to fit our round container. */
+#lion_image .lion-image-block img,
+#lion_image > div > img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+}
+
+/* The stats cell to the right of the king */
+table#about > tbody > tr.right > td.right {
+    vertical-align: middle !important;
+    padding: 18px 22px !important;
+}
+
+/* Footer mutation-count row — subtle, italic */
+table#about > tbody > tr > td.bottom {
+    text-align: center !important;
+    padding: 10px 16px !important;
+    font-family: "Cormorant Garamond", serif !important;
+    font-style: italic !important;
+    font-size: 12px !important;
+    color: #b8a878 !important;
+    border-top: 1px solid rgba(232, 185, 74, 0.30) !important;
+    background: rgba(13, 9, 6, 0.65) !important;
+}
+table#about > tbody > tr > td.bottom b {
+    color: #f5d272 !important;
+    font-weight: 700 !important;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   [B]  ROUND PLAYER AVATAR
+   ─────────────────────────────────────────────────────────────
+   The player's chosen avatar (small image in the Player table)
+   is rendered as a circle.  Icons (icon_den_message.png etc.)
+   stay square so the action buttons still look right.
+   ───────────────────────────────────────────────────────────── */
+table#player tr.right > td[style*="text-align: right"] > img,
+table#player td[style*="width: 150px"] > img,
+table#player img[style*="max-width: 150px"] {
+    width: 140px !important;
+    height: 140px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    background: #0d0907 !important;
+    border: 2px solid rgba(232, 185, 74, 0.55) !important;
+    box-shadow:
+        0 0 0 1px rgba(13, 9, 6, 0.95),
+        0 0 0 3px rgba(232, 185, 74, 0.35),
+        0 4px 14px rgba(0, 0, 0, 0.55) !important;
+    transition: all 0.3s ease !important;
+}
+table#player tr.right > td[style*="text-align: right"] > img:hover,
+table#player img[style*="max-width: 150px"]:hover {
+    border-color: rgba(245, 210, 114, 0.90) !important;
+    box-shadow:
+        0 0 0 1px rgba(13, 9, 6, 0.95),
+        0 0 0 3px rgba(245, 210, 114, 0.65),
+        0 6px 18px rgba(232, 149, 56, 0.45) !important;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   [C]  TITLE CENTRING
+   ─────────────────────────────────────────────────────────────
+   Switch the title to flex so the two ☀ glyphs flank the text
+   with even gaps on both sides.  Also clear the parent's
+   letter-spacing on the pseudo-elements so the right-hand sun
+   doesn't sit a few pixels off-centre.
+   ───────────────────────────────────────────────────────────── */
+.dr-title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    flex-wrap: wrap !important;
+    text-align: center !important;
+    /* Compensate for trailing letter-spacing inside the text */
+    text-indent: 4px !important;
+}
+.dr-title::before,
+.dr-title::after {
+    margin: 0 !important;
+    letter-spacing: 0 !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
+    text-indent: 0 !important;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   [D]  INFO-ROW ALIGNMENT
+   ─────────────────────────────────────────────────────────────
+   The dropcap floats left at the top of each .dr-text block;
+   without a clear, the flex info-rows wrap into the float area
+   and end up with inconsistent widths.  We:
+     1. clear: both — every info-row starts on a fresh line
+     2. fixed 110px label column — all labels start at the same X
+     3. value flex: 1 + right-align — values end at the same right
+   Result: a clean ledger-style layout in every box.
+   ───────────────────────────────────────────────────────────── */
+
+/* Make .dr-text expand around its floated dropcap (clearfix) */
+.dr-text::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Info-rows: clear the float and use predictable flex sizing */
+.dr-info-row {
+    clear: both !important;
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 12px !important;
+    padding: 6px 0 !important;
+    border-bottom: 1px dotted rgba(192, 138, 42, 0.30) !important;
+    font-size: 13px !important;
+}
+.dr-info-row:last-child { border-bottom: none !important; }
+
+.dr-info-label {
+    flex: 0 0 110px !important;       /* fixed column width */
+    text-align: left !important;
+    word-wrap: normal !important;
+    overflow-wrap: normal !important;
+    white-space: normal !important;
+}
+
+.dr-info-value {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;          /* allow shrinking */
+    text-align: right !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+
+/* ============================================================
+   [10] RESPONSIVE — collapses to one column on phones
    ============================================================ */
 @media (max-width: 760px) {
     .dr-territory { width: 100% !important; padding: 0 8px; }
