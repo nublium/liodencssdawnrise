@@ -1459,8 +1459,10 @@ table#about > tbody > tr.right > td:first-child::after {
     content: "♕" !important;
     position: absolute !important;
     top: 10px !important;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0 !important;               /* stretch across full cell width …      */
+    width: 100% !important;            /* … so text-align: center is reliable   */
+    text-align: center !important;     /* centers the glyph without font-metric  */
+    transform: none !important;        /* offsets from translateX(-50%) removed  */
     color: #f5d272 !important;
     font-size: 32px !important;
     line-height: 1 !important;
@@ -1486,8 +1488,9 @@ table#about > tbody > tr.right > td:first-child::before {
         rgba(245, 210, 114, 0.20) 0deg 3deg,
         transparent               3deg 30deg) !important;
     border-radius: 50% !important;
-    -webkit-mask-image: radial-gradient(circle, transparent 38%, black 60%, transparent 88%) !important;
-    mask-image: radial-gradient(circle, transparent 38%, black 60%, transparent 88%) !important;
+    -webkit-mask-image: radial-gradient(circle, transparent 38%, black 60%, transparent 66%) !important;
+    mask-image: radial-gradient(circle, transparent 38%, black 60%, transparent 66%) !important;
+    /* ↑ outer fade tightened 88% → 66% so rays stop just inside the gold ring */
     animation: dr-corona-spin 60s linear infinite !important;
     z-index: 0 !important;
 }
