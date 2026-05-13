@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120" viewBox="0 0 260 120" preserveAspectRatio="xMidYMid slice">
+  <!-- DAWNRISE · MOUND SLOT THUMBNAIL — low savannah mound -->
+  <defs>
+    <radialGradient id="moundSky" cx="50%" cy="40%" r="80%">
+      <stop offset="0%"  stop-color="#3a2410"/>
+      <stop offset="40%" stop-color="#1c1208"/>
+      <stop offset="100%" stop-color="#0a0605"/>
+    </radialGradient>
+    <linearGradient id="moundGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#f5d272"/>
+      <stop offset="50%" stop-color="#c08a2a"/>
+      <stop offset="100%" stop-color="#5c3e10"/>
+    </linearGradient>
+    <radialGradient id="moundSun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#ffd97a" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#e89538" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="260" height="120" fill="url(#moundSky)"/>
+
+  <!-- Decorative gold frame -->
+  <rect x="4" y="4" width="252" height="112" fill="none" stroke="url(#moundGold)" stroke-width="0.5" opacity="0.55"/>
+
+  <!-- Sun -->
+  <circle cx="200" cy="55" r="28" fill="url(#moundSun)"/>
+  <circle cx="200" cy="55" r="8" fill="#ffd97a" opacity="0.85"/>
+
+  <!-- Mound silhouette (foreground, low arc) -->
+  <g fill="#1c1208" stroke="url(#moundGold)" stroke-width="0.6" opacity="0.95">
+    <path d="M 40 92
+             Q 80 65, 130 65
+             Q 175 65, 220 92
+             L 220 110 L 40 110 Z"/>
+  </g>
+
+  <!-- Small acacia atop the mound -->
+  <g fill="#0d0907" stroke="url(#moundGold)" stroke-width="0.4" opacity="0.85">
+    <path d="M 128 70 L 130 56 L 132 70 Z"/>
+    <ellipse cx="130" cy="54" rx="10" ry="3"/>
+  </g>
+
+  <!-- Horizon line -->
+  <path d="M 4 92 L 256 92" stroke="url(#moundGold)" stroke-width="0.5" opacity="0.55"/>
+
+  <!-- Grass tufts -->
+  <g stroke="url(#moundGold)" stroke-width="0.4" opacity="0.5" fill="none">
+    <path d="M 55 96 L 57 90 M 60 96 L 62 90"/>
+    <path d="M 200 96 L 202 90 M 205 96 L 207 90"/>
+  </g>
+
+  <!-- Mound label -->
+  <text x="130" y="108" font-family="Cinzel, serif" font-size="7"
+        fill="rgba(245, 210, 114, 0.65)" text-anchor="middle" letter-spacing="4">— MOUND —</text>
+</svg>

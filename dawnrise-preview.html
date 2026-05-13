@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dawnrise Pride · Kaskazi — Live Preview · Lioden</title>
+
+<!-- Live link to the production CSS — preview always mirrors the latest. -->
+<link rel="stylesheet" href="dawnrise-den.css">
+
+<style>
+/* === Preview-only scaffolding (simulates the Lioden chrome around the territory) === */
+* { box-sizing: border-box; }
+.preview-page    { max-width: 1100px; margin: 0 auto; }
+.preview-layout  { display: flex; gap: 0; }
+.preview-main    { flex: 1; padding: 18px; min-width: 0; }
+.preview-sidebar { width: 290px; padding: 18px; flex-shrink: 0;
+                   border-left: 1px solid rgba(192, 138, 42, 0.30); }
+.preview-label   { font-family: "Cinzel", serif;
+                   font-size: 9px; letter-spacing: 2px;
+                   text-transform: uppercase; color: #8a7a55; margin-bottom: 5px; }
+.sidebar-stat    { display: flex; justify-content: space-between; padding: 4px 0; font-size: 12.5px; }
+.sidebar-stat .ss-label { color: #8a7a55; font-family: "Cinzel", serif;
+                          font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; }
+.sidebar-stat .ss-val   { color: #f5d272; font-family: "Cormorant Garamond", serif;
+                          font-weight: 600; font-size: 13px; }
+
+.demo-banner {
+    background: linear-gradient(90deg, #2a1c0a 0%, #8a5e1c 50%, #2a1c0a 100%);
+    color: #f5d272; text-align: center;
+    padding: 11px 16px;
+    font-family: "Cinzel", serif; font-size: 11px;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    border-bottom: 1px solid rgba(232, 185, 74, 0.55);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+.demo-banner .demo-tag { color: #ffe092; font-weight: 600; }
+
+.navbar {
+    background: linear-gradient(180deg, #1a1208 0%, #0d0907 100%) !important;
+    border-bottom: 1px solid rgba(232, 185, 74, 0.40) !important;
+    padding: 11px 0;
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 4px;
+}
+.navbar a {
+    color: #a89a7a !important;
+    font-family: "Cinzel", serif !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important; letter-spacing: 1.5px !important;
+    text-decoration: none;
+    padding: 8px 16px; display: inline-block;
+    transition: all 0.3s ease !important;
+}
+.navbar a:hover { color: #f5d272 !important;
+                  text-shadow: 0 0 8px rgba(245, 210, 114, 0.55) !important; }
+
+.breadcrumb {
+    background: rgba(20, 13, 9, 0.78) !important;
+    border: 1px solid rgba(232, 185, 74, 0.18) !important;
+    border-radius: 0 !important;
+    color: #8a7a55 !important;
+    font-family: "Cinzel", serif !important;
+    font-size: 11px !important; letter-spacing: 0.5px !important;
+    padding: 8px 16px;
+}
+.breadcrumb a { color: #c08a2a !important; text-decoration: none; }
+
+/* Comment-box mock at the bottom */
+.demo-comments {
+    background: rgba(20, 13, 9, 0.85);
+    border: 1px solid rgba(232, 185, 74, 0.30);
+    margin: 20px 0;
+    padding: 16px 20px;
+}
+.demo-comments h4 {
+    color: #f5d272;
+    font-family: "Cinzel", serif !important;
+    font-size: 12px; letter-spacing: 2px;
+    margin: 0 0 14px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(232, 185, 74, 0.35);
+}
+.demo-comment {
+    display: flex; gap: 10px; padding: 10px 0;
+    border-bottom: 1px dotted rgba(232, 185, 74, 0.20);
+}
+.demo-comment:last-child { border-bottom: none; }
+.demo-comment .ct-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #5c3e10, #1a1208);
+    border: 1px solid rgba(232, 185, 74, 0.40);
+    flex-shrink: 0;
+}
+.demo-comment .ct-body { flex: 1; font-size: 13px; color: #e8d8b0; }
+.demo-comment .ct-body strong { color: #f5d272; }
+.demo-comment .ct-meta { color: #8a7a55; font-size: 10px; margin-top: 3px;
+                         font-family: "Cinzel", serif; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<div class="preview-page">
+
+    <!-- ═══════════════════════════════════════════════════════
+         PREVIEW BANNER (preview-only chrome)
+         ═══════════════════════════════════════════════════════ -->
+    <div class="demo-banner">
+        <span class="demo-tag">☀ LIVE PREVIEW ☀</span> &nbsp;·&nbsp;
+        The Dawnrise Pride — Kaskazi · Lioden #196265
+    </div>
+
+    <!-- Simulated Lioden navbar -->
+    <div class="navbar">
+        <a href="#">Den</a><a href="#">Explore</a><a href="#">Hunt</a><a href="#">Lions</a>
+        <a href="#">Trades</a><a href="#">Messages</a><a href="#">Chat</a>
+    </div>
+
+    <div class="container main">
+
+        <div class="breadcrumb">
+            <a href="#">Home</a> &nbsp;»&nbsp; <a href="#">Lioden</a> &nbsp;»&nbsp; Kaskazi's Den
+        </div>
+
+        <div class="preview-layout">
+
+            <!-- ═══════════════════════════════════════════════
+                 MAIN COLUMN — the actual territory description
+                 ═══════════════════════════════════════════════ -->
+            <div class="preview-main col-md-9">
+
+                <!-- ════════════════════════════════════════════════════════════
+                     THE DAWNRISE PRIDE — TERRITORY SNIPPET (mirrors the .html file)
+                     ════════════════════════════════════════════════════════════ -->
+                <div class="dr-territory">
+
+                    <!-- Top decorative row -->
+                    <div class="dr-sun-row">
+                        <span class="dot"></span> &nbsp; ☀ &nbsp; <span class="dot"></span> &nbsp; ☀ &nbsp; <span class="dot"></span>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="dr-title">The Dawnrise Pride</div>
+                    <div class="dr-subtitle">where dawn never fades.</div>
+                    <div class="dr-motto">· royal · golden · savannah ·</div>
+                    <div class="dr-ornament-lg">— a kingdom of light —</div>
+                    <div class="dr-divider"></div>
+
+                    <!-- Avatar -->
+                    <div class="dr-avatar-wrap">
+                        <span class="dr-avatar-corona"></span>
+                        <span class="dr-avatar-crown">♕</span>
+                        <a href="#">
+                            <span class="dr-avatar-frame">
+                                <img class="dr-avatar"
+                                     src="placeholder-dawnrise-avatar.svg"
+                                     alt="Kaskazi — pride male of the Dawnrise">
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="dr-tags-row">
+                        <span class="dr-tag-bright">thedawnrisepride · #196265</span>
+                        <span class="dr-tag">[your pronouns]</span>
+                        <span class="dr-tag-sun">[your role or specialty]</span>
+                        <span class="dr-tag">[anything else]</span>
+                    </div>
+
+                    <!-- ─── Section I header ─── -->
+                    <div class="dr-section">
+                        <div class="dr-section-label">— Part the First —</div>
+                        <div class="dr-sun-divider">
+                            <span class="dr-sun-medallion"><span>☀</span></span>
+                        </div>
+                        <div class="dr-divider-full">
+                            <span class="dr-divider-mark">
+                                <span class="sun">☀</span> the kingdom &amp; its king <span class="sun">☀</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Row: Box 1 + Box 2 -->
+                    <div class="dr-row">
+
+                        <!-- Box 1 — Pride Male -->
+                        <div class="dr-box dr-box-half dr-box-tall">
+                            <span class="dr-box-corner dr-tl"></span>
+                            <span class="dr-box-corner dr-tr"></span>
+                            <span class="dr-box-corner dr-bl"></span>
+                            <span class="dr-box-corner dr-br"></span>
+                            <div class="dr-box-numeral">— I —</div>
+                            <div class="dr-box-header">
+                                <span class="sym">♕</span> pride male <span class="sym">♕</span>
+                            </div>
+                            <div class="dr-text">
+                                <div class="dr-quote">
+                                    [A short quote, vow, or line of dialogue from your pride male here.]<br>
+                                    [A second line — or delete this br and the line above.]
+                                    <span class="attrib">— Kaskazi —</span>
+                                </div>
+                                <span class="dr-dropcap">K</span>[Your opening paragraph about the pride male goes here. Describe him as if a herald were announcing him: his look, his bearing, his presence. This is the long, flowing intro — let it run for several sentences.]
+                                <p><span class="dr-pilcrow">¶</span>[A second paragraph — this is where you'd talk about his <b>personality</b>, how he carries himself, what other lions think of him.]</p>
+                                <p><span class="dr-pilcrow">¶</span>[A third paragraph for anything else — coalition members, allies, rivals, his daily habits, what he was BEFORE he became pride male.]</p>
+
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Reign</span>
+                                    <span class="dr-info-value dr-text-italic">[3 months / since gen II / etc.]</span>
+                                </div>
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Destined</span>
+                                    <span class="dr-info-value">[when he'll be dethroned]</span>
+                                </div>
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Territory</span>
+                                    <span class="dr-info-value">[40 spaces, etc.]</span>
+                                </div>
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Coalition</span>
+                                    <span class="dr-info-value dr-text-italic">[names, or "—" if solo]</span>
+                                </div>
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Lioness cap</span>
+                                    <span class="dr-info-value dr-text-bright">[number of lionesses]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Box 2 — The Pride -->
+                        <div class="dr-box dr-box-half dr-box-tall">
+                            <span class="dr-box-corner dr-tl"></span>
+                            <span class="dr-box-corner dr-tr"></span>
+                            <span class="dr-box-corner dr-bl"></span>
+                            <span class="dr-box-corner dr-br"></span>
+                            <div class="dr-box-numeral">— II —</div>
+                            <div class="dr-box-header">
+                                <span class="sym">❦</span> the pride <span class="sym">❦</span>
+                            </div>
+                            <div class="dr-text">
+                                <span class="dr-dropcap">T</span>[Open with a sweeping line about the pride itself — its character, its philosophy, what it stands for. Mention that lionesses are PERMANENT members unless something happens to them — this is what sets your pride apart.]
+                                <p><span class="dr-pilcrow">¶</span>[A paragraph about the <span class="dr-text-accent">matriarch</span> — her name, what she's like, why she leads the lionesses.]</p>
+                                <p><span class="dr-pilcrow">¶</span>[A paragraph about the <span class="dr-text-bright">heiress apparent</span> — who will inherit the matriarch's role.]</p>
+                                <p><span class="dr-pilcrow">¶</span>[A paragraph about overall pride health, the bond between members, and the cub-survival rates you roll for.]</p>
+
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Matriarch</span>
+                                    <span class="dr-info-value dr-text-italic">[her name]</span>
+                                </div>
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Heiress</span>
+                                    <span class="dr-info-value dr-text-italic">[her name]</span>
+                                </div>
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Members</span>
+                                    <span class="dr-info-value">[lionesses + cubs]</span>
+                                </div>
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Cub survival</span>
+                                    <span class="dr-info-value dr-text-bright">[rolled %]</span>
+                                </div>
+                                <div class="dr-info-row">
+                                    <span class="dr-info-label">Pride health</span>
+                                    <span class="dr-info-value dr-text-sun">[thriving / steady / struggling]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ─── Section II header ─── -->
+                    <div class="dr-section">
+                        <div class="dr-section-label">— Part the Second —</div>
+                        <div class="dr-sun-divider">
+                            <span class="dr-sun-medallion"><span>❦</span></span>
+                        </div>
+                        <div class="dr-divider-full">
+                            <span class="dr-divider-mark">
+                                <span class="sun">☀</span> the dawnrise pride <span class="sun">☀</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Box 3 — Lore (full width) -->
+                    <div class="dr-box dr-box-full">
+                        <span class="dr-box-corner dr-tl"></span>
+                        <span class="dr-box-corner dr-tr"></span>
+                        <span class="dr-box-corner dr-bl"></span>
+                        <span class="dr-box-corner dr-br"></span>
+                        <div class="dr-box-numeral">— III —</div>
+                        <div class="dr-box-header">
+                            <span class="sym">☀</span> the dawnrise pride <span class="sym">☀</span>
+                        </div>
+                        <div class="dr-text">
+                            <div class="dr-quote">
+                                [Your founding line, prayer, motto, or signature phrase here.]
+                                <span class="attrib">— from the dawnrise tongue —</span>
+                            </div>
+                            <span class="dr-dropcap">W</span>[Open the lore here — origin story, founding, the meaning behind "where dawn never fades." This is the home for the BIG narrative.]
+                            <p><span class="dr-pilcrow">¶</span>[Second paragraph — territory and setting. Where does the Dawnrise live? What does the landscape look like? What time of day is the pride most active?]</p>
+                            <p><span class="dr-pilcrow">¶</span>[Third paragraph — customs, traditions, anything ritualistic. Naming customs? Honoring the dawn? Hunting patterns?]</p>
+                            <p><span class="dr-pilcrow">¶</span>[Fourth paragraph — what makes this pride different. Bloodline goals, breeding philosophy, mutation interests, anything you specifically pursue.]</p>
+
+                            <ul class="dr-list">
+                                <li><span class="dr-text-accent">[Trait or rule one]</span> — [short description].</li>
+                                <li><span class="dr-text-accent">[Trait or rule two]</span> — [short description].</li>
+                                <li><span class="dr-text-accent">[Trait or rule three]</span> — [short description].</li>
+                                <li><span class="dr-text-accent">[Trait or rule four]</span> — [short description].</li>
+                            </ul>
+
+                            <div class="dr-trefoil">☀ &nbsp; ✦ &nbsp; ☀</div>
+
+                            <div class="dr-quote">
+                                [A closing line — a wish, a promise, a warning.]
+                                <span class="attrib">— [attribution: your name, a character, "the pride"]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dr-divider"></div>
+                    <div class="dr-ornament">☀ &nbsp; ❖ &nbsp; ☀</div>
+                    <div class="dr-footer">
+                        the dawnrise pride &nbsp; · &nbsp; led by kaskazi &nbsp; · &nbsp; lioden #196265
+                    </div>
+                    <div class="dr-credit">
+                        css &amp; layout designed by <a href="#">nub</a> · please don't redistribute.
+                    </div>
+                </div>
+
+                <!-- Comment-box mock (Lioden has this beneath every den) -->
+                <div class="demo-comments">
+                    <h4>☀ Comments on Kaskazi's Den</h4>
+                    <div class="demo-comment">
+                        <div class="ct-avatar"></div>
+                        <div class="ct-body">
+                            <strong>SomeLion #12345</strong> — beautiful den! love the colour palette ☀
+                            <div class="ct-meta">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="demo-comment">
+                        <div class="ct-avatar"></div>
+                        <div class="ct-body">
+                            <strong>AnotherLion #67890</strong> — Kaskazi looks so regal with that sun behind him!
+                            <div class="ct-meta">yesterday</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end .preview-main -->
+
+            <!-- ═══════════════════════════════════════════════
+                 SIDEBAR — simulates the Lioden right rail
+                 ═══════════════════════════════════════════════ -->
+            <div class="preview-sidebar">
+                <div class="panel panel-default">
+                    <div class="panel-heading">☀ Pride Stats</div>
+                    <div class="panel-body">
+                        <div class="sidebar-stat"><span class="ss-label">Pride</span><span class="ss-val">The Dawnrise</span></div>
+                        <div class="sidebar-stat"><span class="ss-label">King</span><span class="ss-val">Kaskazi</span></div>
+                        <div class="sidebar-stat"><span class="ss-label">Lionesses</span><span class="ss-val">—</span></div>
+                        <div class="sidebar-stat"><span class="ss-label">Cubs</span><span class="ss-val">—</span></div>
+                        <div class="sidebar-stat"><span class="ss-label">Territory</span><span class="ss-val">40</span></div>
+                    </div>
+                </div>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">☀ Time &amp; Season</div>
+                    <div class="panel-body">
+                        <div class="sidebar-stat"><span class="ss-label">Time</span><span class="ss-val">Dawn</span></div>
+                        <div class="sidebar-stat"><span class="ss-label">Season</span><span class="ss-val">Dry</span></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- Cave thumbnails (preview) -->
+                <div class="preview-label">CAVES</div>
+                <a href="#"><div class="cave-grid"><img src="" alt="">Empty Cave Slot</div></a>
+                <br>
+                <a href="#"><div class="cave-grid"><img src="" alt="">Empty Cave Slot</div></a>
+                <br>
+                <a href="#"><div class="mound-grid"><img src="" alt="">Mound</div></a>
+            </div>
+
+        </div>
+        <!-- end .preview-layout -->
+
+    </div>
+    <!-- end .container.main -->
+
+</div>
+<!-- end .preview-page -->
+
+</body>
+</html>

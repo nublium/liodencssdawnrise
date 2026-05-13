@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="170" viewBox="0 0 260 170" preserveAspectRatio="xMidYMid slice">
+  <!-- NESTING banner — a lioness in repose with cubs -->
+  <defs>
+    <radialGradient id="nsSky" cx="50%" cy="40%" r="80%">
+      <stop offset="0%"  stop-color="#5c3e10"/>
+      <stop offset="40%" stop-color="#1c1208"/>
+      <stop offset="100%" stop-color="#0a0605"/>
+    </radialGradient>
+    <linearGradient id="nsGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#f5d272"/>
+      <stop offset="50%" stop-color="#c08a2a"/>
+      <stop offset="100%" stop-color="#5c3e10"/>
+    </linearGradient>
+    <radialGradient id="nsSun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#ffd97a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#e89538" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="260" height="170" fill="url(#nsSky)"/>
+  <rect x="4" y="4" width="252" height="162" fill="none" stroke="url(#nsGold)" stroke-width="0.5" opacity="0.55"/>
+
+  <!-- Sun (warmer, lower, like late dawn) -->
+  <circle cx="200" cy="60" r="34" fill="url(#nsSun)"/>
+  <circle cx="200" cy="60" r="12" fill="#ffd97a" opacity="0.85"/>
+
+  <!-- Horizon ridge -->
+  <path d="M 0 120 Q 60 115, 110 118 Q 150 113, 200 118 Q 230 122, 260 120 L 260 170 L 0 170 Z"
+        fill="#0d0907"/>
+  <path d="M 0 120 Q 60 115, 110 118 Q 150 113, 200 118 Q 230 122, 260 120"
+        fill="none" stroke="url(#nsGold)" stroke-width="0.6" opacity="0.65"/>
+
+  <!-- Lioness silhouette lying down (long oval body, head on top) -->
+  <g fill="#0d0907" stroke="url(#nsGold)" stroke-width="0.6" opacity="0.95">
+    <!-- Body (large flat oval) -->
+    <ellipse cx="110" cy="125" rx="62" ry="14"/>
+    <!-- Head (round, on left side of body) -->
+    <circle cx="62" cy="108" r="13"/>
+    <!-- Ear -->
+    <path d="M 56 100 L 54 94 L 60 99 Z"/>
+    <!-- Tail (curling up to the right) -->
+    <path d="M 170 124 Q 184 110, 192 116" fill="none" stroke-width="1.5"/>
+    <!-- Subtle leg suggestion -->
+    <path d="M 80 138 L 84 142 M 134 138 L 138 142" stroke-width="1.2"/>
+  </g>
+
+  <!-- Two tiny cubs nestled against her -->
+  <g fill="#1c1208" stroke="url(#nsGold)" stroke-width="0.4" opacity="0.95">
+    <ellipse cx="100" cy="135" rx="8" ry="4"/>
+    <circle cx="93" cy="133" r="3.5"/>
+    <ellipse cx="130" cy="135" rx="7" ry="3.5"/>
+    <circle cx="125" cy="133" r="3"/>
+  </g>
+
+  <!-- Acacia in the distance -->
+  <g fill="#0d0907" stroke="url(#nsGold)" stroke-width="0.4" opacity="0.85">
+    <path d="M 32 120 L 34 102 L 36 120 Z"/>
+    <ellipse cx="34" cy="100" rx="11" ry="3"/>
+  </g>
+
+  <!-- Title -->
+  <text x="130" y="158" font-family="Cinzel, serif" font-size="9"
+        fill="rgba(245, 210, 114, 0.85)" text-anchor="middle" letter-spacing="4"
+        font-weight="700">— NESTING —</text>
+</svg>

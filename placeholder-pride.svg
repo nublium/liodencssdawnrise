@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="170" viewBox="0 0 260 170" preserveAspectRatio="xMidYMid slice">
+  <!-- PRIDE OVERVIEW banner — regal lion silhouette with full sun -->
+  <defs>
+    <radialGradient id="prSky" cx="50%" cy="40%" r="80%">
+      <stop offset="0%"  stop-color="#7a5520"/>
+      <stop offset="40%" stop-color="#2a1c0a"/>
+      <stop offset="100%" stop-color="#0a0605"/>
+    </radialGradient>
+    <linearGradient id="prGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#f5d272"/>
+      <stop offset="50%" stop-color="#c08a2a"/>
+      <stop offset="100%" stop-color="#5c3e10"/>
+    </linearGradient>
+    <radialGradient id="prSun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#fff5d0"/>
+      <stop offset="30%" stop-color="#ffd97a"/>
+      <stop offset="70%" stop-color="#e89538" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#c08a2a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="260" height="170" fill="url(#prSky)"/>
+  <rect x="4" y="4" width="252" height="162" fill="none" stroke="url(#prGold)" stroke-width="0.5" opacity="0.55"/>
+
+  <!-- HUGE sun directly behind the lion -->
+  <circle cx="130" cy="100" r="70" fill="url(#prSun)"/>
+
+  <!-- Sun rays radiating out -->
+  <g stroke="url(#prGold)" stroke-width="0.7" opacity="0.55" fill="none">
+    <line x1="130" y1="18" x2="130" y2="38"/>
+    <line x1="50"  y1="100" x2="68"  y2="100"/>
+    <line x1="195" y1="100" x2="212" y2="100"/>
+    <line x1="68"  y1="48" x2="82"  y2="60"/>
+    <line x1="195" y1="48" x2="180" y2="60"/>
+    <line x1="68"  y1="152" x2="82"  y2="142"/>
+    <line x1="195" y1="152" x2="180" y2="142"/>
+  </g>
+
+  <!-- Horizon -->
+  <path d="M 0 135 L 260 135 L 260 170 L 0 170 Z" fill="#0d0907"/>
+  <path d="M 0 135 L 260 135" stroke="url(#prGold)" stroke-width="0.6" opacity="0.65"/>
+
+  <!-- LION SILHOUETTE (regal, head turned forward, mane wide) -->
+  <g fill="#0d0907" stroke="url(#prGold)" stroke-width="0.8" opacity="0.96">
+    <!-- Big mane halo -->
+    <path d="M 100 110
+             C 88 108, 80 118, 84 128
+             C 78 134, 82 144, 90 146
+             C 88 152, 95 156, 102 154
+             C 105 160, 115 160, 120 156
+             C 128 160, 138 158, 142 152
+             C 150 154, 158 148, 158 142
+             C 166 140, 168 130, 162 124
+             C 168 116, 162 108, 152 110
+             C 148 102, 134 102, 130 110
+             C 122 104, 108 104, 100 110 Z"/>
+    <!-- Spike tufts around the mane -->
+    <path d="M 84 128 L 76 126 L 84 134 Z"/>
+    <path d="M 90 146 L 84 152 L 96 150 Z"/>
+    <path d="M 102 154 L 100 162 L 108 158 Z"/>
+    <path d="M 120 156 L 122 164 L 128 158 Z"/>
+    <path d="M 142 152 L 148 160 L 142 154 Z"/>
+    <path d="M 158 142 L 168 144 L 158 138 Z"/>
+    <path d="M 162 124 L 172 122 L 162 118 Z"/>
+    <path d="M 152 110 L 158 102 L 148 108 Z"/>
+    <!-- Face inset -->
+    <ellipse cx="121" cy="132" rx="15" ry="17" fill="#1c1208"/>
+    <!-- Eyes -->
+    <ellipse cx="115" cy="128" rx="1.6" ry="2.0" fill="#f5d272"/>
+    <ellipse cx="127" cy="128" rx="1.6" ry="2.0" fill="#f5d272"/>
+    <!-- Nose -->
+    <path d="M 119 138 L 123 138 L 121 141 Z" fill="#3a2410"/>
+  </g>
+
+  <!-- Acacia silhouettes -->
+  <g fill="#0d0907" stroke="url(#prGold)" stroke-width="0.4" opacity="0.85">
+    <path d="M 30 135 L 32 118 L 34 135 Z"/>
+    <ellipse cx="32" cy="116" rx="10" ry="3"/>
+    <path d="M 226 135 L 228 120 L 230 135 Z"/>
+    <ellipse cx="228" cy="118" rx="9" ry="3"/>
+  </g>
+
+  <!-- Title -->
+  <text x="130" y="158" font-family="Cinzel, serif" font-size="9"
+        fill="rgba(245, 210, 114, 0.85)" text-anchor="middle" letter-spacing="4"
+        font-weight="700">— PRIDE —</text>
+</svg>

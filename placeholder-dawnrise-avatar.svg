@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice">
+  <!-- DAWNRISE — KASKAZI · CIRCULAR SUN-LION CREST
+       Round composition for a circle frame.  Rising sun forms
+       the background halo; a noble lion silhouette stands in
+       profile on the horizon; two acacia trees flank the scene;
+       a small crown floats above.  Warm gold-amber palette only —
+       deliberately NOT a Kreta lion-face or an Ardenius coat-of-arms. -->
+  <defs>
+    <!-- Warm savannah sky gradient — deep bronze at the rim, sun-amber at centre -->
+    <radialGradient id="skyDawn" cx="50%" cy="62%" r="68%">
+      <stop offset="0%"  stop-color="#f5d272"/>
+      <stop offset="25%" stop-color="#e8b94a"/>
+      <stop offset="55%" stop-color="#c08a2a"/>
+      <stop offset="78%" stop-color="#6b4012"/>
+      <stop offset="100%" stop-color="#1c1208"/>
+    </radialGradient>
+
+    <!-- Sun-disc gradient — bright core fading to amber -->
+    <radialGradient id="sunDisc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#fff5d0"/>
+      <stop offset="35%" stop-color="#ffd97a"/>
+      <stop offset="70%" stop-color="#e89538"/>
+      <stop offset="100%" stop-color="#c08a2a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold linework gradient (for the lion outline, borders, etc.) -->
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#fff2c8"/>
+      <stop offset="50%" stop-color="#e8b94a"/>
+      <stop offset="100%" stop-color="#8a5e1c"/>
+    </linearGradient>
+
+    <!-- Solid lion-body fill — rich dark bronze, contrasts with sky -->
+    <linearGradient id="lionFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  stop-color="#2a1c0a"/>
+      <stop offset="50%" stop-color="#1c1208"/>
+      <stop offset="100%" stop-color="#0d0907"/>
+    </linearGradient>
+
+    <!-- Horizon land gradient -->
+    <linearGradient id="horizonLand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  stop-color="#3a2410"/>
+      <stop offset="100%" stop-color="#0d0907"/>
+    </linearGradient>
+
+    <!-- Outer ring gold gradient -->
+    <linearGradient id="ringGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  stop-color="#f5d272"/>
+      <stop offset="50%" stop-color="#c08a2a"/>
+      <stop offset="100%" stop-color="#5c3e10"/>
+    </linearGradient>
+
+    <!-- Glow filter for the sun & crown -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Clip the whole composition to a perfect circle -->
+    <clipPath id="circleClip">
+      <circle cx="150" cy="150" r="148"/>
+    </clipPath>
+  </defs>
+
+
+  <!-- ============ EVERYTHING INSIDE THE CIRCLE ============ -->
+  <g clip-path="url(#circleClip)">
+
+    <!-- Sky background -->
+    <rect width="300" height="300" fill="url(#skyDawn)"/>
+
+    <!-- ─── Sun rays radiating outward (subtle, behind everything) ─── -->
+    <g opacity="0.45" fill="url(#goldLine)">
+      <!-- 16 thin triangular rays from center -->
+      <g transform="translate(150,168)">
+        <polygon points="0,-130 -3,-60 3,-60"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(22.5)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(45)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(67.5)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(90)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(112.5)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(135)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(157.5)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(180)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(202.5)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(225)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(247.5)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(270)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(292.5)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(315)"/>
+        <polygon points="0,-130 -3,-60 3,-60" transform="rotate(337.5)"/>
+      </g>
+    </g>
+
+    <!-- ─── The sun disc itself ─── -->
+    <g filter="url(#glow)">
+      <circle cx="150" cy="168" r="58" fill="url(#sunDisc)"/>
+      <!-- Inner brighter core -->
+      <circle cx="150" cy="168" r="28" fill="#fff5d0" opacity="0.65"/>
+      <circle cx="150" cy="168" r="14" fill="#ffffff" opacity="0.85"/>
+    </g>
+
+    <!-- ─── Horizon land mass (bottom third) ─── -->
+    <path d="M 0 240
+             Q 60 230, 110 232
+             Q 150 225, 190 230
+             Q 240 234, 300 240
+             L 300 300 L 0 300 Z"
+          fill="url(#horizonLand)"/>
+    <!-- Land ridge highlight -->
+    <path d="M 0 240
+             Q 60 230, 110 232
+             Q 150 225, 190 230
+             Q 240 234, 300 240"
+          fill="none"
+          stroke="url(#goldLine)"
+          stroke-width="0.8"
+          opacity="0.65"/>
+
+    <!-- ─── Left acacia tree silhouette ─── -->
+    <g fill="url(#lionFill)" stroke="url(#goldLine)" stroke-width="0.5" opacity="0.92">
+      <!-- Trunk -->
+      <path d="M 38 240 L 40 200 L 42 240 Z"/>
+      <!-- Flat acacia canopy -->
+      <ellipse cx="40" cy="198" rx="26" ry="6"/>
+      <ellipse cx="40" cy="194" rx="22" ry="4" opacity="0.75"/>
+    </g>
+
+    <!-- ─── Right acacia tree silhouette (smaller, farther) ─── -->
+    <g fill="url(#lionFill)" stroke="url(#goldLine)" stroke-width="0.5" opacity="0.92">
+      <path d="M 258 240 L 260 210 L 262 240 Z"/>
+      <ellipse cx="260" cy="208" rx="20" ry="5"/>
+      <ellipse cx="260" cy="205" rx="17" ry="3.5" opacity="0.75"/>
+    </g>
+
+    <!-- A few distant grass tufts -->
+    <g stroke="url(#goldLine)" stroke-width="0.6" opacity="0.45" fill="none">
+      <path d="M 80 248 L 82 240 M 84 246 L 86 238 M 82 244 L 80 236"/>
+      <path d="M 215 245 L 217 237 M 220 248 L 222 240 M 224 246 L 226 238"/>
+      <path d="M 125 252 L 127 244 M 130 252 L 132 244"/>
+      <path d="M 175 252 L 177 244 M 180 252 L 182 244"/>
+    </g>
+
+
+    <!-- ============ LION SILHOUETTE IN PROFILE ============
+         Standing nobly on the horizon, head turned forward,
+         mane catching the sun.  Drawn as a single solid silhouette
+         with a thin gold outline. -->
+    <g filter="url(#glow)">
+      <!-- Mane (big, layered halo of fur around the head) -->
+      <path d="M 122 162
+               C 110 158, 102 165, 100 178
+               C 96 184, 96 195, 104 200
+               C 102 208, 108 215, 116 216
+               C 114 224, 120 230, 128 230
+               C 132 236, 142 236, 148 232
+               C 156 236, 168 234, 172 228
+               C 180 228, 186 222, 188 214
+               C 196 212, 200 204, 198 196
+               C 204 192, 206 182, 202 174
+               C 204 166, 198 158, 188 158
+               C 184 152, 174 150, 168 154
+               C 162 150, 152 150, 148 156
+               C 140 152, 130 154, 122 162 Z"
+            fill="url(#lionFill)"
+            stroke="url(#goldLine)"
+            stroke-width="1.2"
+            stroke-linejoin="round"/>
+
+      <!-- Spiky mane tufts radiating out (gives wild, lion-like edge) -->
+      <g fill="url(#lionFill)" stroke="url(#goldLine)" stroke-width="0.8">
+        <path d="M 100 178 L 92 174 L 100 184 Z"/>
+        <path d="M 100 195 L 90 196 L 102 202 Z"/>
+        <path d="M 108 215 L 100 220 L 112 222 Z"/>
+        <path d="M 128 230 L 122 240 L 134 234 Z"/>
+        <path d="M 168 232 L 174 242 L 162 236 Z"/>
+        <path d="M 188 220 L 198 222 L 188 214 Z"/>
+        <path d="M 198 198 L 208 196 L 198 190 Z"/>
+        <path d="M 202 178 L 212 178 L 202 172 Z"/>
+        <path d="M 188 158 L 196 152 L 184 158 Z"/>
+        <path d="M 122 162 L 116 154 L 124 160 Z"/>
+      </g>
+
+      <!-- The face (inset, lighter color so it reads as a face inside the mane) -->
+      <ellipse cx="151" cy="192" rx="22" ry="24"
+               fill="#1a1208"
+               stroke="url(#goldLine)"
+               stroke-width="0.8"/>
+
+      <!-- Muzzle / lower face shading -->
+      <ellipse cx="151" cy="204" rx="11" ry="7"
+               fill="#0d0907"
+               opacity="0.85"/>
+
+      <!-- Two glowing amber eyes -->
+      <ellipse cx="143" cy="186" rx="2.2" ry="2.8" fill="#f5d272"/>
+      <ellipse cx="159" cy="186" rx="2.2" ry="2.8" fill="#f5d272"/>
+      <!-- Pupil slits -->
+      <ellipse cx="143" cy="186" rx="0.7" ry="2.0" fill="#1a1208"/>
+      <ellipse cx="159" cy="186" rx="0.7" ry="2.0" fill="#1a1208"/>
+      <!-- Eye highlights -->
+      <circle cx="142.3" cy="185.3" r="0.5" fill="#ffffff" opacity="0.9"/>
+      <circle cx="158.3" cy="185.3" r="0.5" fill="#ffffff" opacity="0.9"/>
+
+      <!-- Nose -->
+      <path d="M 149 197 L 153 197 L 151 200 Z" fill="#3a2410" stroke="url(#goldLine)" stroke-width="0.4"/>
+      <!-- Nose-to-mouth line + slight mouth -->
+      <path d="M 151 200 L 151 206 M 148 208 Q 151 211, 154 208"
+            fill="none" stroke="#1a1208" stroke-width="0.6" opacity="0.85"/>
+
+      <!-- Two small ear tufts poking through the mane top -->
+      <path d="M 132 158 L 128 150 L 136 154 Z" fill="url(#lionFill)" stroke="url(#goldLine)" stroke-width="0.6"/>
+      <path d="M 168 158 L 172 150 L 164 154 Z" fill="url(#lionFill)" stroke="url(#goldLine)" stroke-width="0.6"/>
+
+      <!-- Body suggestion below the head — implied chest emerging from the horizon -->
+      <path d="M 108 232
+               Q 108 246, 116 252
+               L 186 252
+               Q 194 246, 194 232
+               L 188 222
+               L 114 222 Z"
+            fill="url(#lionFill)"
+            stroke="url(#goldLine)"
+            stroke-width="1"
+            opacity="0.95"/>
+    </g>
+
+
+    <!-- ============ CROWN floating above the lion's head ============ -->
+    <g filter="url(#glow)" transform="translate(0, -2)">
+      <!-- Crown base band -->
+      <path d="M 128 130 L 174 130 L 172 138 L 130 138 Z"
+            fill="url(#ringGold)" stroke="url(#goldLine)" stroke-width="0.8"/>
+      <!-- Three round-topped points (African-king style, not gothic) -->
+      <path d="M 130 130
+               L 134 116
+               Q 138 110, 142 116
+               L 146 130 Z"
+            fill="url(#ringGold)" stroke="url(#goldLine)" stroke-width="0.8"/>
+      <path d="M 144 130
+               L 148 110
+               Q 151 102, 154 110
+               L 158 130 Z"
+            fill="url(#ringGold)" stroke="url(#goldLine)" stroke-width="0.8"/>
+      <path d="M 156 130
+               L 160 116
+               Q 164 110, 168 116
+               L 172 130 Z"
+            fill="url(#ringGold)" stroke="url(#goldLine)" stroke-width="0.8"/>
+      <!-- Three small amber gems set in the crown -->
+      <circle cx="138" cy="122" r="1.8" fill="#e89538" stroke="url(#goldLine)" stroke-width="0.4"/>
+      <circle cx="151" cy="115" r="2.4" fill="#ffba70" stroke="url(#goldLine)" stroke-width="0.4"/>
+      <circle cx="164" cy="122" r="1.8" fill="#e89538" stroke="url(#goldLine)" stroke-width="0.4"/>
+      <!-- Gem highlights -->
+      <circle cx="137.5" cy="121.5" r="0.5" fill="#ffffff" opacity="0.85"/>
+      <circle cx="150.5" cy="114.5" r="0.7" fill="#ffffff" opacity="0.95"/>
+      <circle cx="163.5" cy="121.5" r="0.5" fill="#ffffff" opacity="0.85"/>
+      <!-- Crown jewel hairline -->
+      <path d="M 130 134 L 172 134" stroke="url(#goldLine)" stroke-width="0.5" opacity="0.55"/>
+    </g>
+
+  </g>
+  <!-- ============ END CIRCLE-CLIPPED REGION ============ -->
+
+
+  <!-- ─── OUTER DECORATIVE RING (around the circle clip) ─── -->
+  <circle cx="150" cy="150" r="148" fill="none" stroke="url(#ringGold)" stroke-width="3"/>
+  <circle cx="150" cy="150" r="144" fill="none" stroke="#1a1208" stroke-width="1"/>
+  <circle cx="150" cy="150" r="141" fill="none" stroke="url(#ringGold)" stroke-width="0.6" opacity="0.65"/>
+
+  <!-- Twelve tiny sun-dots evenly placed around the ring (like a clock face) -->
+  <g fill="#f5d272" opacity="0.85">
+    <circle cx="150" cy="6"  r="1.4"/>
+    <circle cx="222" cy="25" r="1.2"/>
+    <circle cx="275" cy="78" r="1.2"/>
+    <circle cx="294" cy="150" r="1.4"/>
+    <circle cx="275" cy="222" r="1.2"/>
+    <circle cx="222" cy="275" r="1.2"/>
+    <circle cx="150" cy="294" r="1.4"/>
+    <circle cx="78"  cy="275" r="1.2"/>
+    <circle cx="25"  cy="222" r="1.2"/>
+    <circle cx="6"   cy="150" r="1.4"/>
+    <circle cx="25"  cy="78"  r="1.2"/>
+    <circle cx="78"  cy="25"  r="1.2"/>
+  </g>
+
+  <!-- Tiny script signature on the inner ring (bottom arc) -->
+  <defs>
+    <path id="bottomArc" d="M 50 215 A 110 110 0 0 0 250 215" fill="none"/>
+  </defs>
+  <text font-family="Cinzel, serif" font-size="7" fill="#f5d272" letter-spacing="6" opacity="0.85">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">
+      DAWNRISE  ·  KASKAZI
+    </textPath>
+  </text>
+</svg>

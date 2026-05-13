@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="170" viewBox="0 0 260 170" preserveAspectRatio="xMidYMid slice">
+  <!-- DAWNRISE · CAVE SLOT THUMBNAIL — savannah cave at dawn -->
+  <defs>
+    <radialGradient id="caveSky" cx="50%" cy="45%" r="80%">
+      <stop offset="0%"  stop-color="#3a2410"/>
+      <stop offset="40%" stop-color="#1c1208"/>
+      <stop offset="100%" stop-color="#0a0605"/>
+    </radialGradient>
+    <linearGradient id="caveGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#f5d272"/>
+      <stop offset="50%" stop-color="#c08a2a"/>
+      <stop offset="100%" stop-color="#5c3e10"/>
+    </linearGradient>
+    <radialGradient id="caveSun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#ffd97a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#e89538" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="260" height="170" fill="url(#caveSky)"/>
+
+  <!-- Decorative gold frame -->
+  <rect x="4" y="4" width="252" height="162" fill="none" stroke="url(#caveGold)" stroke-width="0.5" opacity="0.55"/>
+  <path d="M 4 16 Q 4 4, 16 4 M 256 16 Q 256 4, 244 4 M 4 154 Q 4 166, 16 166 M 256 154 Q 256 166, 244 166"
+        fill="none" stroke="url(#caveGold)" stroke-width="1" opacity="0.55"/>
+
+  <!-- Sun behind the rocks -->
+  <circle cx="180" cy="80" r="44" fill="url(#caveSun)"/>
+  <circle cx="180" cy="80" r="14" fill="#ffd97a" opacity="0.85"/>
+
+  <!-- Cave rock formation (left foreground silhouette) -->
+  <g fill="#1c1208" stroke="url(#caveGold)" stroke-width="0.6" opacity="0.95">
+    <path d="M 30 130
+             Q 50 95, 80 90
+             Q 110 92, 120 130 Z"/>
+    <!-- Cave opening (darker arch carved in) -->
+    <path d="M 65 130
+             Q 70 110, 80 105
+             Q 92 108, 96 130 Z"
+          fill="#000000"
+          stroke="url(#caveGold)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Right rocky outcrop -->
+  <g fill="#1c1208" stroke="url(#caveGold)" stroke-width="0.5" opacity="0.92">
+    <path d="M 200 130
+             Q 215 105, 232 108
+             Q 245 115, 248 130 Z"/>
+  </g>
+
+  <!-- Acacia silhouette in the distance -->
+  <g fill="#0d0907" stroke="url(#caveGold)" stroke-width="0.4" opacity="0.85">
+    <path d="M 148 132 L 150 110 L 152 132 Z"/>
+    <ellipse cx="150" cy="108" rx="14" ry="3.5"/>
+  </g>
+
+  <!-- Horizon ground line -->
+  <path d="M 4 130 L 256 130" stroke="url(#caveGold)" stroke-width="0.6" opacity="0.65"/>
+
+  <!-- A few grass tufts -->
+  <g stroke="url(#caveGold)" stroke-width="0.5" opacity="0.5" fill="none">
+    <path d="M 130 135 L 132 128 M 134 134 L 136 127 M 138 136 L 140 129"/>
+    <path d="M 165 137 L 167 130 M 170 137 L 172 130"/>
+  </g>
+
+  <!-- Tiny "cave" label -->
+  <text x="130" y="155" font-family="Cinzel, serif" font-size="8"
+        fill="rgba(245, 210, 114, 0.65)" text-anchor="middle" letter-spacing="4"
+        text-transform="uppercase">— CAVE —</text>
+</svg>
