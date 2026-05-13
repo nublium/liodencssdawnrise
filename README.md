@@ -3,10 +3,6 @@
 CSS + HTML commission for **The Dawnrise Pride** — led by Kaskazi.
 Lioden member **thedawnrisepride · #196265**.
 
-Theme: *royal golden savannah* — warm dawn light, sandstone golds, ebony blacks,
-acacia silhouettes and a circular sun-lion crest. Built to feel like a kingdom
-of light in the long grass.
-
 Designed by **nub** · Lioden #166079.
 
 ---
